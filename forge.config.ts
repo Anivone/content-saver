@@ -19,13 +19,21 @@ const config: ForgeConfig = {
         config: rendererConfig,
         entryPoints: [
           {
-            html: './src/index.html',
-            js: './src/renderer.ts',
+            html: './src/ui/public/index.html',
+            js: './src/electron/renderer.ts',
             name: 'main_window',
             preload: {
-              js: './src/preload.ts',
+              js: './src/electron/preload.ts',
             },
           },
+          {
+            html: './src/ui/public/index.html',
+            js: './src/electron/renderer.ts',
+            name: "view_preload",
+            preload: {
+              js: './src/electron/viewPreload.ts'
+            }
+          }
         ],
       },
     }),
